@@ -4,11 +4,11 @@ on: [push]
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
+    env:
+      MY_SECRET: ${{ secrets.MY_SECRET }}
     steps:
-        - env:
-            MY_SECRET: ${{ secrets.MY_SECRET }}
         - run: echo "my secret is $MY_SECRET" > toto.txt
-        - uses: actions/upload-artifact@v4
+          uses: actions/upload-artifact@v4
           with:
             name: toto
             path: toto.txt
