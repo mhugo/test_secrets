@@ -5,4 +5,5 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
+      - run: echo "my var is ${{ vars.MY_VAR }}"
       - run: echo "my secret is ${{ secrets.MY_SECRET }}"
