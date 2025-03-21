@@ -5,7 +5,10 @@ jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
-      - shell: bash
-        env:
-          MY_SECRET: ${{ secrets.MY_SECRET }}
-        run: echo "my secret is $MY_SECRET"
+        - env:
+            MY_SECRET: ${{ secrets.MY_SECRET }}
+        - run: echo "my secret is $MY_SECRET" > toto.txt
+        - uses: actions/upload-artifact@v4
+          with:
+            name: toto
+            path: toto.txt
