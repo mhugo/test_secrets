@@ -1,0 +1,3 @@
+{
+  "credentials": "${{secrets.my_secret}}"
+}
